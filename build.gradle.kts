@@ -3,6 +3,7 @@ import java.util.Locale
 plugins {
     id ("java")
     id("io.papermc.paperweight.userdev") version "1.5.3"
+    id("maven-publish")
 }
 
 java {
@@ -13,6 +14,7 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -42,4 +44,14 @@ tasks {
     }
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = group.toString();
+            artifactId = project.name
+            version = version;
 
+            from(components["java"])
+        }
+    }
+}

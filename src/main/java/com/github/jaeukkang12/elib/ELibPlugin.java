@@ -1,8 +1,8 @@
-package com.github.jaeukkang12.sample;
+package com.github.jaeukkang12.elib;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class SamplePlugin extends JavaPlugin {
+public class ELibPlugin extends JavaPlugin {
     // PLUGIN INSTANCE
     private static JavaPlugin plugin;
 
@@ -10,8 +10,6 @@ public class SamplePlugin extends JavaPlugin {
     public void onEnable() {
         // PLUGIN INSTANCE
         plugin = this;
-
-        getLogger().info("Hello World!");
     }
 
     @Override

@@ -2,7 +2,7 @@ import java.util.Locale
 
 plugins {
     id ("java")
-    id("io.papermc.paperweight.userdev") version "1.5.3" // Paperweight의 최신 버전
+    id("io.papermc.paperweight.userdev") version "1.5.3"
 }
 
 java {
@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     paperDevBundle("1.17.1-R0.1-SNAPSHOT") // 원하는 Paper 버전
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 extra.apply {
@@ -25,7 +26,7 @@ extra.apply {
             if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString()
         }
     })
-    set("packageName", project.name.replace("-", ""))
+    set("packageName", project.name.replace("-", "").lowercase())
 }
 
 tasks.withType<JavaCompile> {

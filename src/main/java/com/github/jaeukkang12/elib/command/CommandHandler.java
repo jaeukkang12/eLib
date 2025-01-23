@@ -35,8 +35,8 @@ public class CommandHandler implements CommandExecutor {
                 commandMap.computeIfAbsent(parent, k -> new HashMap<>()).put(sub, method);
                 instanceMap.computeIfAbsent(parent, k -> new HashMap<>()).put(sub, commandClass);
                 permissionMap.computeIfAbsent(parent, k -> new HashMap<>()).put(sub, permission);
-
-                plugin.getLogger().info("Registered command: " + parent + " " + sub);
+//                ONLY DEBUGGING
+//                plugin.getLogger().info("Registered command: " + parent + " " + sub);
             }
         }
     }

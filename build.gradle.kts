@@ -19,7 +19,6 @@ repositories {
 
 dependencies {
     paperDevBundle("1.17.1-R0.1-SNAPSHOT") // 원하는 Paper 버전
-    implementation(kotlin("stdlib-jdk8"))
 }
 
 extra.apply {
@@ -40,18 +39,6 @@ tasks {
         filesMatching("*.yml") {
             expand(project.properties)
             expand(extra.properties)
-        }
-    }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = group.toString();
-            artifactId = project.name
-            version = version;
-
-            from(components["java"])
         }
     }
 }

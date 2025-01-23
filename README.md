@@ -13,6 +13,7 @@
 * #### Features
     * Config 파일 작성
     * ItemStack 제작 접근성 개선
+    * Command 실행 코드 작성 접근성 개선
 
 * #### Supported minecraft versions
     * 1.17

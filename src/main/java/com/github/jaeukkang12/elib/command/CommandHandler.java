@@ -5,14 +5,11 @@ import org.bukkit.command.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.lang.reflect.Method;
-import java.security.Permission;
 import java.util.*;
 
-public class CommandHandler implements CommandExecutor {
+import static com.github.jaeukkang12.elib.messages.Message.*;
 
-    private final String ERROR = StringUtil.color("&c명령어를 실행하던 중 오류가 발생했습니다.");
-    private final String WRONG_COMMAND = StringUtil.color("&c알 수 없는 명령어입니다!");
-    private final String NO_PERMISSION = StringUtil.color("&c명령어를 사용할 수 없습니다!");
+public class CommandHandler implements CommandExecutor {
 
     private final Map<String, Map<String, Method>> commandMap = new HashMap<>();
     private final Map<String, Map<String, Object>> instanceMap = new HashMap<>();

@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Command {
     String parent(); // 상위 명령어
-    String sub(); // 하위 명령어
+    String sub() default ""; // 하위 명령어
     String permission() default ""; // 권한
 }

@@ -41,12 +41,8 @@ public class CommandHandler implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command command, String s, String[] args) {
         String parentCommand = command.getName().toLowerCase();
-        if (args.length == 0) {
-            sender.sendMessage(StringUtil.color("/" + parentCommand + " help"));
-            return true;
-        }
 
-        String subCommand = args[0].toLowerCase();
+        String subCommand = (args.length == 0) ? "" : args[0].toLowerCase();
         Method method = commandMap.getOrDefault(parentCommand, new HashMap<>()).get(subCommand);
         Object instance = instanceMap.getOrDefault(parentCommand, new HashMap<>()).get(subCommand);
         String permission = permissionMap.getOrDefault(parentCommand, new HashMap<>()).getOrDefault(subCommand, null);
